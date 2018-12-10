@@ -1,10 +1,21 @@
+const {bootstrap} = require("trebuchet-vu");
 const VU = require("trebuchet-vu-eth");
 const Web3 = require("web3");
 
 const RPC = "http://localhost:8545";
 const GRPC_URL = "localhost:50051";
 class Actor extends VU {
-  async start() {
+  constructor(state) {
+    const web3 = new Web3(RPC);
+    const { privateKey } = web3.eth.accounts.create();
+    super({
+      privateKey,
+      rpc: RPC,
+      grpc: GRPC_URL
+    });
+  }
+  
+  async run() {
     // Request for some ether from the faucet
     await this.requestMinFund(Web3.utils.toWei("0.01", "ether"));
 
@@ -19,16 +30,5 @@ class Actor extends VU {
   }
 }
 
-process.on("message", async state => {
-  const web3 = new Web3(RPC);
-  const { privateKey } = web3.eth.accounts.create();
-  const vuState = {
-    ...state,
-    privateKey,
-    rpc: RPC,
-    grpc: GRPC_URL
-  };
-  const actor = new Actor(vuState);
-  await actor.start();
-  process.exit();
-});
+
+bootstrap(Actor);
