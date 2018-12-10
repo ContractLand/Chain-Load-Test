@@ -1,0 +1,16 @@
+{
+  "name": "trebuchet-box-ethereum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/runner.js",
+  "scripts": {
+    "test": "DEBUG='vu*,manager*,-manager:report*' node src/runner.js"
+  },
+  "author": "Raymond Yeh <yehjxraymond@gmail.com> (http://geek.sg)",
+  "license": "ISC",
+  "dependencies": {
+    "trebuchet-faucet-eth": "0.0.3",
+    "trebuchet-manager": "0.0.4",
+    "trebuchet-vu-eth": "0.0.3"
+  }
+}
