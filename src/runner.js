@@ -2,7 +2,7 @@ const { join } = require("path");
 const Manager = require("trebuchet-manager");
 
 const SETUP_SCRIPT = join(__dirname, "./setup.js");
-const VU_SCRIPT = join(__dirname, "./virtualUser.js");
+const VU_SCRIPT = join(__dirname, "./vu.js");
 
 const rampPeriod = 5000;
 const concurrency = 30;
