@@ -18,10 +18,6 @@ The report for the load test can be found in the `load_test_report` folder
 
 You may use this repository to get started with using Trebuchet Framework to load test your private network. 
 
-## Sample Report
-
-![Sample Report](https://raw.githubusercontent.com/Trebuchet-Framework/Trebuchet/master/static/sample-report.png)
-
 ## Installation
 
 1. Clone this repository
@@ -60,3 +56,7 @@ You may use this repository to get started with using Trebuchet Framework to loa
   ```bash
   open load_test_report/index.html
   ```
+
+## Sample Report
+
+![Sample Report](https://raw.githubusercontent.com/Trebuchet-Framework/Trebuchet/master/static/sample-report.png)
