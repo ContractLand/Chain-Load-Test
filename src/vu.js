@@ -1,4 +1,4 @@
-const {bootstrap} = require("trebuchet-vu");
+const bootstrap = require("trebuchet-bootstrap");
 const VU = require("trebuchet-vu-eth");
 const Web3 = require("web3");
 
