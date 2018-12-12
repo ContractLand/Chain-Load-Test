@@ -2,14 +2,15 @@
 
 This box is configured to run a load test on a Ethereum network. It does so by running a virtual user that perform the following actions:
 
-1. Obtain 0.01 ether from a faucet account
+1. Obtain 0.1 ether from a faucet account
 2. Send 0.002 ether to an account
-3. Send 0.002 ether to an account
-4. Send 0.002 ether to an account
+3. Deploy a mintable token smart contract
+4. Mint some token on the smart contract
+5. Send 50000 tokens to an account
 
 The default configuration for the load test has been set to the following:
 
-- Concurrent Virtual Users: 30
+- Concurrent Virtual Users: 5
 - Ramp Period: 5 sec
 - Active Period: 55 sec
 - Cooling Timeout: 10 sec
