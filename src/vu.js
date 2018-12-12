@@ -29,24 +29,24 @@ class Actor extends VU {
     });
 
     // TX 3: Deploy a mintable token smart contract
-    const contract = await this.txWrapper("DEPLOY_CONTRACT", () => this.deployContract(abi, bytecode.object, {
+    const contract = await this.deployContract(abi, bytecode.object, {
       gas: 3000000,
       gasPrice: 0
-    }));
+    });
 
     // TX 4: Mint some tokens
-    await this.txWrapper("CONTRACT_SEND", () => contract.methods.mint(this.account.address, "100000").send({
+    await contract.tx.mint(this.account.address, "100000").send({
       from: this.account.address,
       gas: 3000000,
       gasPrice: 0
-    }));
+    });
 
     // TX 5: Send token to an address
-    await this.txWrapper("CONTRACT_SEND", () => contract.methods.transfer("0x3c7539cd57b7e03f722c3aeb636247188b25dcc4", "50000").send({
+    await contract.tx.transfer("0x3c7539cd57b7e03f722c3aeb636247188b25dcc4", "50000").send({
       from: this.account.address,
       gas: 3000000,
       gasPrice: 0
-    }));
+    });
   }
 }
 
