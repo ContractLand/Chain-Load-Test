@@ -19,40 +19,33 @@ class Actor extends VU {
   
   async run() {
     // TX 1: Request for some ether from the faucet
-    await this.requestMinFund(Web3.utils.toWei("0.1", "ether"));
+    await this.requestMinFund(Web3.utils.toWei("0.05", "ether"));
 
-    // TX 2: Send some ether to an address
-    await this.signAndSendTransaction({
-      to: "0x3c7539cd57b7e03f722c3aeb636247188b25dcc4",
-      value: Web3.utils.toWei("0.002", "ether"),
-      gas: 21000
-    });
-
-    // TX 3: Deploy a mintable token smart contract
+    // TX 2: Deploy a mintable token smart contract
     const contract = await this.deployContract(abi, bytecode.object, {
       gas: 3000000,
       gasPrice: 0
     });
 
-    // TX 4: Mint some tokens
+    // TX 3: Mint some tokens
     await contract.tx.mint(this.account.address, "100000").send({
       from: this.account.address,
       gas: 3000000,
       gasPrice: 0
     });
 
-    // TX 5: Contract call to verify balance
+    // TX 4: Contract call to verify balance
     const tokenMinted = await contract.tx.balanceOf(this.account.address).call();
     if(tokenMinted !== "100000") throw new Error("Tokens were not minted");
 
-    // TX 6: Send token to an address
+    // TX 5: Send token to an address
     await contract.tx.transfer("0x3c7539cd57b7e03f722c3aeb636247188b25dcc4", "50000").send({
       from: this.account.address,
       gas: 3000000,
       gasPrice: 0
     });
 
-    // TX 7: Contract call to verify balance
+    // TX 6: Contract call to verify balance
     const tokenSent = await contract.tx.balanceOf("0x3c7539cd57b7e03f722c3aeb636247188b25dcc4").call();
     if(tokenSent !== "50000") throw new Error("Recipient did not receive the token");
   }
