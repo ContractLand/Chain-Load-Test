@@ -4,14 +4,14 @@
   "description": "",
   "main": "src/runner.js",
   "scripts": {
-    "test": "DEBUG='vu*,manager*,-manager:report*' node src/runner.js"
+    "test": "node src/runner.js"
   },
   "author": "Raymond Yeh <yehjxraymond@gmail.com> (http://geek.sg)",
   "license": "ISC",
   "dependencies": {
     "trebuchet-bootstrap": "0.0.2",
     "trebuchet-faucet-eth": "0.0.5",
-    "trebuchet-manager": "0.0.8",
+    "trebuchet-manager": "0.0.11",
     "trebuchet-vu-eth": "0.0.8"
   }
 }
