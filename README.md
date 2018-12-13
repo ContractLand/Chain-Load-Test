@@ -8,7 +8,9 @@ The virtual user's actions are defined in `src/vu.js`.
 2. Send 0.002 ether to an account
 3. Deploy a mintable token smart contract
 4. Mint some token on the smart contract
-5. Send 50000 tokens to an account
+5. Verify token has been minted with contract call
+6. Send 50000 tokens to an account
+7. Verify token has been sent with contract call
 
 The default configuration for the load test has been set to the following:
 
