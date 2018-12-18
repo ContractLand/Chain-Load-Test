@@ -1,4 +1,3 @@
-const bootstrap = require("trebuchet-bootstrap");
 const VU = require("trebuchet-vu-eth");
 const Web3 = require("web3");
 
@@ -13,7 +12,8 @@ class Actor extends VU {
     super({
       privateKey,
       rpc: RPC,
-      grpc: GRPC_URL
+      grpc: GRPC_URL,
+      ...state
     });
   }
   
@@ -51,5 +51,4 @@ class Actor extends VU {
   }
 }
 
-
-bootstrap(Actor);
+module.exports = Actor;

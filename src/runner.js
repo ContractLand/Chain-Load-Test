@@ -6,7 +6,7 @@ const VU_TOKEN_CREATOR = join(__dirname, "./vu-token-creator.js");
 const VU_SENDER = join(__dirname, "./vu-sender.js");
 
 const rampPeriod = 5000;
-const concurrency = 5;
+const concurrency = 10;
 const activePeriod = 55000;
 const coolingTimeout = 10000;
 

@@ -11,7 +11,7 @@
   "dependencies": {
     "trebuchet-bootstrap": "0.0.2",
     "trebuchet-faucet-eth": "0.0.5",
-    "trebuchet-manager": "0.0.11",
-    "trebuchet-vu-eth": "0.0.8"
+    "trebuchet-manager": "0.0.13",
+    "trebuchet-vu-eth": "0.0.9"
   }
 }
