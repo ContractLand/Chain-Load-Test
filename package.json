@@ -9,9 +9,8 @@
   "author": "Raymond Yeh <yehjxraymond@gmail.com> (http://geek.sg)",
   "license": "ISC",
   "dependencies": {
-    "trebuchet-bootstrap": "0.0.2",
     "trebuchet-faucet-eth": "0.0.5",
-    "trebuchet-manager": "0.0.13",
-    "trebuchet-vu-eth": "0.0.9"
+    "trebuchet-manager": "0.0.14",
+    "trebuchet-vu-eth": "0.0.10"
   }
 }
